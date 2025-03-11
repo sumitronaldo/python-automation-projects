@@ -3,13 +3,13 @@ import getpass
 import re
 password = getpass.getpass("Enter your root password: ")
 configure = Config(overrides={'sudo': {'password': password}})
-conn = Connection(host="13.232.236.118", user="ubuntu", connect_kwargs={"password": password}, config=configure)
+conn = Connection(host="<IP>", user="ubuntu", connect_kwargs={"password": password}, config=configure)
 
 #conn.run("sudo su -")
 conn.sudo("apt update -y")
 conn.sudo("apt install python3")
 #conn.sudo("apt install net-tools")
-ip_address = "13.232.236.118"
+ip_address = "<IP>"
 
 desktop_path = "~/"
 
