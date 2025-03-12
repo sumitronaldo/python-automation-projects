@@ -5,7 +5,6 @@ password = getpass.getpass("Enter your root password: ")
 configure = Config(overrides={'sudo': {'password': password}})
 conn = Connection(host="<IP>", user="ubuntu", connect_kwargs={"password": password}, config=configure)
 
-#conn.run("sudo su -")
 conn.sudo("apt update -y")
 conn.sudo("apt install python3")
 #conn.sudo("apt install net-tools")
